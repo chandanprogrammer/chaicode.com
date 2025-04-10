@@ -7,10 +7,14 @@ import LiveClass from "../components/LiveClass";
 import Testimonials from "../components/Testimonials";
 import CourseSlider from "../components/CourseSlider";
 import KeyBenefits from "../components/KeyBenefits";
+import WhyChaiCode from "../components/WhyChaiCode";
+import Topics from "../components/Topics";
+import LinePattern from "../components/design/LinePattern";
 
 const Home = () => {
   return (
-    <div>
+    <div className="">
+      <LinePattern />
       <Navbar />
       <HeroSection />
       <TweetDisplay />
@@ -19,6 +23,8 @@ const Home = () => {
       <Testimonials />
       <CourseSlider />
       <KeyBenefits />
+      <WhyChaiCode />
+      <Topics />
       <div className="mb-[800px]">
 
       </div>

@@ -1,49 +1,61 @@
 import React, { useState } from "react";
-import { AlignRight } from "lucide-react";
 import { Link, useNavigate } from "react-router";
+import { AlignJustify, X } from "lucide-react";
+import LoginButton from "./button/LoginButton";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
   const navLinks = [
-    { label: "Cohorts", href: "#", showLive: true },
-    { label: "Udemy", href: "#" },
-    { label: "Docs", href: "#" },
-    { label: "Reviews", href: "#" },
+    {
+      label: "Cohorts",
+      href: "https://courses.chaicode.com/learn/batch/about?bundleId=214297",
+      ariaLabel: "cohorts",
+      showLiveBlink: true,
+    },
+    {
+      label: "Udemy",
+      href: "https://docs.chaicode.com",
+      ariaLabel: "udemy course",
+    },
+    { label: "Docs", href: "https://docs.chaicode.com", ariaLabel: "docs" },
+    { label: "Reviews", href: "/", ariaLabel: "reviews" },
   ];
 
   return (
     <div>
-      <nav className="h-[60px] relative w-full px-6 md:px-16 lg:px-16 xl:px-18 2xl:px-55 flex items-center justify-between z-30 bg-gradient-to-r from-indigo-700/10 to-violet-500/20 transition-all">
-        {/* Logo */}
-        <div className="flex gap-1 items-center">
+      <nav className="px-6 md:px-16 lg:px-16 xl:px-20 2xl:px-55 flex items-center justify-between h-[80px] relative w-full z-30 tracking-wide">
+        {/* ---------- Chaicode Logo ---------- */}
+        <div className="flex items-center gap-1 z-40">
           <img
-            className="h-8 cursor-pointer"
+            aria-label="chaicode logo"
+            className="h-7 md:h-8 cursor-pointer"
             src="./public/images/chaicode-white.svg"
-            alt="logo"
+            alt="ChaiCode Logo"
             onClick={() => {
               navigate("/");
             }}
           />
         </div>
 
-        {/* Desktop Menu */}
-        <ul className="text-white md:flex hidden items-center gap-10">
-          {navLinks.map(({ label, href, showLive }) => (
-            <li key={label} className="flex gap-2 items-center justify-center">
-              <a className="hover:text-white/70 transition" href={href}>
+        {/* ---------- Desktop Menu ---------- */}
+        <ul className="text-white lg:flex hidden items-center gap-10">
+          {navLinks.map(({ label, href, ariaLabel, showLiveBlink }) => (
+            <li key={label} className="flex items-center justify-center gap-2 ">
+              <Link
+                to={href}
+                target="_blank"
+                aria-label={ariaLabel}
+                className="text-lg hover:text-white/70 transition"
+              >
                 {label}
-              </a>
-              {showLive && (
-                <div className="flex items-center space-x-2 pt-1">
+              </Link>
+              {showLiveBlink && (
+                <div className="pt-1">
                   <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
+                    <span className="h-full w-full rounded-full bg-red-600"></span>
+                    <span className="h-full w-full rounded-full bg-red-500 absolute animate-ping "></span>
                   </span>
                 </div>
               )}
@@ -51,42 +63,79 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Desktop Login Button */}
-        <button
-          type="button"
-          className="bg-orange-500 text-white md:inline hidden text-lg hover:opacity-90 active:scale-95 transition-all px-6 py-1 rounded cursor-pointer"
-        >
-          Login
-        </button>
+        {/* ---------- Login Desktop Button ---------- */}
+        <div className="hidden lg:flex">
+          <LoginButton
+            text="Login"
+            link="https://courses.chaicode.com/learn/account/signin"
+            target="_blank"
+          />
+        </div>
 
-        {/* Mobile Menu Toggle Button */}
+        {/* ----------  Mobile Menu Toggle Button ---------- */}
         <button
           aria-label="menu-btn"
           type="button"
-          className="menu-btn inline-block md:hidden active:scale-90 transition cursor-pointer"
-          onClick={toggleMobileMenu}
+          className="menu-btn inline-block lg:hidden active:scale-90 transition cursor-pointer"
+          onClick={() => {
+            setIsMobileMenuOpen(!isMobileMenuOpen);
+          }}
         >
-          <AlignRight size={26} color="#ffffff" />
+          <AlignJustify size={32} color="#ffffff" />
         </button>
 
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="mobile-menu absolute top-[70px] left-0 w-full bg-gradient-to-r from-indigo-700 to-violet-500 p-6 md:hidden">
-            <ul className="flex flex-col space-y-4 text-white text-lg">
-              {navLinks.map(({ label, href }) => (
-                <li key={label}>
-                  <a href={href} className="text-sm">
+          <div
+            className={`mobile-menu top-0 left-0 fixed  h-[100vh] w-[85vw] bg-[#192336] p-7 lg:hidden transform transition-transform duration-300 ease-in-out z-100`}
+          >
+            <div className="flex items-center justify-between gap-1 pt-1 pl-4 mb-12">
+              <img
+                aria-label="chaicode logo"
+                className="h-7 cursor-pointer"
+                src="./public/images/chaicode-white.svg"
+                alt="ChaiCode Logo"
+                onClick={() => {
+                  navigate("/");
+                }}
+              />
+              <X
+                size={32}
+                onClick={() => {
+                  setIsMobileMenuOpen(!isMobileMenuOpen);
+                }}
+                className="cursor-pointer"
+              />
+            </div>
+            <ul className="flex flex-col space-y-7 text-white">
+              {navLinks.map(({ label, href, ariaLabel, showLiveBlink }) => (
+                <li key={label} className="flex items-center gap-2 ">
+                  <Link
+                    to={href}
+                    target="_blank"
+                    aria-label={ariaLabel}
+                    className="text-lg pl-8"
+                  >
                     {label}
-                  </a>
+                  </Link>
+                  {showLiveBlink && (
+                    <div className="pt-1">
+                      <span className="relative flex h-2 w-2">
+                        <span className="h-full w-full rounded-full bg-red-600"></span>
+                        <span className="h-full w-full rounded-full bg-red-500 absolute animate-ping "></span>
+                      </span>
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>
-            <button
-              type="button"
-              className="bg-white text-gray-700 mt-6 inline md:hidden text-sm hover:opacity-90 active:scale-95 transition-all w-40 h-11 rounded-full"
-            >
-              Login
-            </button>
+            {/* ---------- Login Mobile Button ---------- */}
+            <div className="pl-8 mt-10">
+              <LoginButton
+                text="Login"
+                link="https://courses.chaicode.com/learn/account/signin"
+                target="_blank"
+              />
+            </div>
           </div>
         )}
       </nav>

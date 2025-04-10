@@ -7,8 +7,32 @@ import {
   CodeXml,
   FlaskConical,
 } from "lucide-react";
+import HeadingText from "./design/HeadingText";
 
 const KeyBenefits = () => {
+  const imageNetworkUrl = [
+    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    "",
+    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    "",
+    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    "",
+    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    "",
+    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    "",
+    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    "",
+    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    "",
+    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    "",
+    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    "",
+    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    "",
+    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+  ];
   const features = [
     {
       icon: <ShieldCheck className="w-8 h-8 text-purple-600" />,
@@ -43,32 +67,38 @@ const KeyBenefits = () => {
   ];
 
   return (
-    <div className="px-6 md:px-16 lg:px-16 xl:px-18 2xl:px-55 flex flex-col justify-center items-center mt-10">
-      <h2 className="text-5xl font-semibold tracking-wider">
-        Key Benefits of Cohorts
-      </h2>
-      <p className="w-[30%] text-center text-gray-300 mt-5 mb-10">
-        Cohorts are best way to learn because you finish the course in a timely
-        manner
-      </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6 cursor-pointer">
+    <div className="px-6 md:px-16 lg:px-16 xl:px-20 2xl:px-55 flex flex-col justify-center items-center mt-10">
+      <HeadingText heading="Key Benefits of Cohorts" text="Cohorts are best way to learn because you finish the course in a timely
+        manner" />
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:p-6 cursor-pointer ">
         {features.map((feature, index) => (
           <div
             key={index}
-            className="bg-gray-800 p-6 rounded-2xl shadow-lg border hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out"
+            className="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-300/40 hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out"
           >
             <div className="mb-4 animate-fade-in">{feature.icon}</div>
-            <h3 className="text-lg font-semibold text-gray-300 mb-2">
+            <h3 className="text-xl font-semibold text-gray-300 mb-2">
               {feature.title}
             </h3>
             <p className="text-sm text-gray-400">{feature.text}</p>
           </div>
         ))}
       </div>
-      <div className="flex gap-2 border-1 p-6 rounded border-green-600">
-        <div className="w-[50%] bg-gray-700 h-[280px] rounded-lg">Face</div>
+      <div className="flex gap-2 border-1 p-6 rounded border-gray-600">
+        <div className="w-[50%] bg-gray-700 h-[280px] rounded-lg p-6 grid grid-cols-7 gap-2">
+          {imageNetworkUrl.map((link, index) => (
+            <div key={index} className="flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full">
+                <img src={link} alt="" className=" w-[100%] rounded-full " />
+              </div>
+            </div>
+          ))}
+        </div>
         <div className="w-[50%] flex  flex-col items-center justify-center text-center">
-          <h2 className="text-[30px] font-bold tracking-wide text-orange-400 mb-4">Alumni Network and job listings</h2>
+          <h2 className="text-[30px] font-bold tracking-wide text-orange-400 mb-4">
+            Alumni Network and job listings
+          </h2>
           <p className="w-[90%] text-gray-200 tracking-wide">
             The alumni Network that you always wished for in your college. We
             have a dedicated platform where students get to know each other, do

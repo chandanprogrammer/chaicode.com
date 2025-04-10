@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  background-color: #e1e1e1;
+  position: relative;
+  width: 100vw !important;
+  overflow-x: hidden;
+
+  /* -webkit-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none;  */
+}
+.dark {
+  background-color: #192336;
+  color: #ffffff;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+
+
+.line-pattern-design {
+  --main-color: rgb(46, 213, 115, 0.3);
+  --main-bg-color: rgba(46, 213, 116, 0.36);
+  --pattern-color: rgba(46, 213, 116, 0.073);
+  width: 100vw;
+  height: 100vh;
+
+  filter: hue-rotate(30deg);
+
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  background: radial-gradient(
+      circle,
+      var(--main-bg-color) 0%,
+      rgba(0, 0, 0, 0) 95%
+    ),
+    linear-gradient(var(--pattern-color) 1px, transparent 1px),
+    linear-gradient(to right, var(--pattern-color) 1px, transparent 1px);
+  background-size: cover, 55px 55px, 55px 55px;
+  background-position: center center, center center, center center;
+  border-image: radial-gradient(
+      circle,
+      var(--main-color) 0%,
+      rgba(0, 0, 0, 0) 100%
+    )
+    1;
+  border-width: 1px 0 1px 0;
+  color: var(--main-color);
+  padding: 1rem 3rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: background-size 0.2s ease-in-out;
+}
+
+.line-pattern-design:active {
+  filter: hue-rotate(260deg);
+}
+
+.line-pattern-layer-background {
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 0, 0, 0),
+    rgb(25, 35, 54, 10)
+  );
+}
+
+/* Particle background */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgba(96, 213, 116, 0.36);
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+
+.animate-button{
+  /* margin: 0 auto; */
+  padding: 1em;
+  background: #13637A;
+  text-align: center;
+  border-radius: 10px;
+  border: red;
+  position: relative;
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.animate-button::after,
+.animate-button::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent 70%,
+    #006aff,
+    #ff0095,
+    #00ff99
+  );
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 10;
+  padding: 10px;
+  border-radius: 10px;
+  animation: 3s spin-animate-button linear infinite;
+}
+.animate-button::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+@keyframes spin-animate-button {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}

@@ -1,12 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
+import { Link } from "react-router";
 import {
-  ChevronLeft,
-  ChevronRight,
+  ArrowLeft,
+  ArrowRight,
   Star,
   CircleCheck,
   AlarmClockCheck,
-  ShoppingCart,
 } from "lucide-react";
+import HeadingText from "./design/HeadingText";
 
 const CourseSlider = () => {
   const sliderRef = useRef(null);
@@ -15,11 +16,11 @@ const CourseSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const images = [
-    "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/gallery/slide1.png",
-    "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/gallery/slide2.png",
-    "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/gallery/slide3.png",
-    "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/gallery/slide4.png",
-    "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/gallery/slide5.png",
+    "./public/images/image.png",
+    "./public/images/image.png",
+    "./public/images/image.png",
+    "./public/images/image.png",
+    "./public/images/image.png",
   ];
 
   const totalSlides = images.length;
@@ -44,13 +45,13 @@ const CourseSlider = () => {
     goToSlide(currentSlide);
   }, [currentSlide]);
 
-  //   useEffect(() => {
-  //     const interval = setInterval(() => {
-  //       nextSlide();
-  //     }, 5000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000);
 
-  //     return () => clearInterval(interval);
-  //   }, []);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -62,33 +63,33 @@ const CourseSlider = () => {
   }, [currentSlide]);
 
   return (
-    <div className="px-6 md:px-16 lg:px-16 xl:px-20 2xl:px-24 flex items-center justify-center flex-col mt-8">
-      <h2 className="text-5xl font-semibold tracking-wider">
-        Our Students feedback
-      </h2>
-      <p className="w-[30%] text-center text-gray-300 mt-5 mb-10">
-        Explore the incredible advantages of enrolling in our courses and
-        enhancing your skills
-      </p>
+    <div className="px-6 md:px-16 lg:px-16 xl:px-20 2xl:px-55 flex items-center justify-center flex-col ">
+      <HeadingText
+        heading="Udemy"
+        text="Not only in India, we are global leaders in tech education"
+      />
 
-      <div className="px-6 md:px-16 lg:px-16 xl:px-20 2xl:px-24 flex items-center justify-center flex-rowmt-8 rounded-full">
+      <div className="flex items-center justify-center flex-rowmt-8 rounded-full mt-8">
         <div
-          className="md:p-2 p-1 bg-black/30 md:mr-6 mr-2 rounded-full hover:bg-black/50 cursor-pointer"
+          className="md:p-2 p-1 bg-black/30 md:mr-6 mr-2 rounded-full hover:bg-black/50 cursor-pointer hidden md:inline border border-cyan-500"
           ref={prevButtonRef}
           onClick={prevSlide}
         >
-          <ChevronLeft size={25} />
+          <ArrowLeft size={25} />
         </div>
 
-        <div className="w-full max-w-4xl overflow-hidden relative rounded-lg border-1">
+        <div className="w-full max-w-xl lg:max-w-4xl overflow-hidden relative rounded-lg border border-gray-200/30 ">
           <div
-            className="flex transition-transform duration-500 ease-in-out"
+            className="flex transition-transform duration-500 ease-in-out bg-amber-600"
             ref={sliderRef}
           >
             {images.map((src, index) => (
-              <div className="w-full flex-shrink-0 bg-gray-900 flex flex-row gap-3 items-center justify-center px-10 py-6 ">
-                <div className="w-[80%] text-center">
-                  <h2 className="text-2xl mb-5 text-sky-500 font-semibold tracking-wide">
+              <div
+                key={index}
+                className="w-full flex-shrink-0 bg-gray-900 flex flex-col lg:flex-row gap-6 lg:gap-4 items-center justify-center px-4 py-10 lg:p-4 "
+              >
+                <div className="text-center">
+                  <h2 className="text-3xl mb-5 text-gary-200 font-semibold tracking-wide">
                     Complete web development course
                   </h2>
                   <p className="text-base text-gray-400">
@@ -96,9 +97,14 @@ const CourseSlider = () => {
                     CSS, Tailwind, Node, React, MongoDB, Prisma, Development etc
                   </p>
                   <div className="text-2xl flex items-center justify-center gap-4">
-                    <div class="flex items-center justify-center mt-3 gap-2">
-                      {Array.from({ length: 5 }, () => (
-                        <Star size={18} strokeWidth={0} fill="yellow" />
+                    <div className="flex items-center justify-center mt-3 gap-2">
+                      {Array.from({ length: 5 }, (arr, index) => (
+                        <Star
+                          key={index}
+                          size={18}
+                          strokeWidth={0}
+                          fill="yellow"
+                        />
                       ))}
                     </div>
                     <p className="text-3xl text-gray-300 mt-5 mb-2 border-2 border-gray-800 px-6 py-2">
@@ -109,11 +115,11 @@ const CourseSlider = () => {
                     Top Reated
                   </p>
                 </div>
-                <div className="w-[50%] bg-amber-50 text-gray-800 rounded-sm">
-                  <div className="w-full h-[160px] rounded-sm">
+                <div className="w-[80%] lg:w-[50%] bg-amber-50 text-gray-800 rounded-sm">
+                  <div className="w-full lg:h-[50%] rounded-sm">
                     <img
-                      className="h-full rounded-sm"
-                      src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/gallery/slide1.png"
+                      className="h-auto object-cover rounded-t-sm"
+                      src="./public/images/image.png"
                       alt=""
                     />
                   </div>
@@ -150,19 +156,24 @@ const CourseSlider = () => {
                       </span>
                       45 minutes left at this price
                     </div>
-                    <div className="flex gap-4 flex-col">
-                      <button
-                        type="button"
-                        class="px-6 py-2 active:scale-95 transition bg-purple-700 rounded text-white shadow-lg shadow-blue-500/30 text-sm font-medium w-[100%] cursor-pointer flex gap-3 items-center justify-center"
+                    <div className="flex gap-4 flex-col mt-4">
+                      <Link
+                        to="https://www.udemy.com/course/web-dev-master"
+                        target="_blank"
                       >
-                        <ShoppingCart size={16} /> Add to cart
-                      </button>
-                      <button
+                        <button
+                          type="button"
+                          className="px-6 py-2 transition bg-purple-700 hover:bg-purple-900 rounded text-white shadow-lg shadow-blue-500/30 text-[18px] font-medium w-[100%] cursor-pointer flex gap-3 items-center justify-center"
+                        >
+                          Buy Now
+                        </button>
+                      </Link>
+                      {/* <button
                         type="button"
-                        class="bg-white text-gray-500 active:scale-95 transition text-sm px-6 py-2 rounded border border-gray-500 w-[100%] cursor-pointer flex gap-3 items-center justify-center mb-2"
+                        className="bg-white text-gray-500 active:scale-95 transition text-sm px-6 py-2 rounded border border-gray-500 w-[100%] cursor-pointer flex gap-3 items-center justify-center mb-2"
                       >
-                       Buy now 
-                      </button>
+                        Buy now
+                      </button> */}
                     </div>
                   </div>
                 </div>
@@ -172,14 +183,13 @@ const CourseSlider = () => {
         </div>
 
         <div
-          className="p-1 md:p-2 bg-black/30 md:ml-6 ml-2 rounded-full hover:bg-black/50 cursor-pointer"
+          className="p-1 md:p-2 bg-black/30 md:ml-6 ml-2 rounded-full hover:bg-black/50 cursor-pointer hidden md:inline border border-cyan-500"
           ref={nextButtonRef}
           onClick={nextSlide}
         >
-          <ChevronRight size={25} />
+          <ArrowRight size={25} />
         </div>
       </div>
-
     </div>
   );
 };

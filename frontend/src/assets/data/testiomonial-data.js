@@ -24,7 +24,7 @@ export const testiomonialData = [
     username: "Chandan Kumar",
     ratting: 4,
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enimdistinctio saepe sed deleniti quam quae, adipisci tempora verocorrupti, beatae reprehenderit",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enimdistinctio saepe sed deleniti quam quae, adipisci tempora verocorrupti, beatae reprehenderit ",
   },
   {
     imageUrl:

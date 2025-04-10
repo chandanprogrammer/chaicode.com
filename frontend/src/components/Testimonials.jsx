@@ -1,29 +1,34 @@
 import React from "react";
-import { Star, StarHalf, Rocket } from "lucide-react";
-import { testiomonialData } from "../assets/testiomonial-data";
+import { Star, StarHalf } from "lucide-react";
+import { testiomonialData } from "../assets/data/testiomonial-data";
+import HeadingText from "./design/HeadingText";
+import LiveCohortsButton from "./button/LiveCohortsButton";
 
 const Testimonials = () => {
   return (
-    <div className="px-6 md:px-16 lg:px-16 xl:px-20 2xl:px-24 flex items-center justify-center flex-col mt-8">
-      <h2 className="text-5xl font-semibold tracking-wider">
-        Our Students feedback
-      </h2>
-      <p className="w-[30%] text-center text-gray-300 mt-5">
-        Explore the incredible advantages of enrolling in our courses and
-        enhancing your skills
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-14">
+    <div className="px-6 md:px-16 lg:px-16 xl:px-20 2xl:px-24 flex items-center justify-center flex-col mt-8 relative">
+      {/* <div className="absolute w-full h-[800px] rotate-80 top-0 left-[-100px] bg-radial-[at_30%_55%] from-via-blue-400/14 to-[#101426] to-90% z-[-1]"></div> */}
+      <HeadingText
+        heading="Our Students feedback"
+        text="Explore the incredible advantages of enrolling in our courses and
+        enhancing your skills"
+      />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
         {testiomonialData.map(
-          ({ imageUrl, imageAlt, username, ratting, message }) => (
-            <div class="w-80 flex flex-col items-center border border-gray-300 px-4 py-8 rounded-lg bg-gray-800">
-              <div class="relative mb-2">
+          ({ imageUrl, imageAlt, username, ratting, message }, index) => (
+            <div
+              key={index}
+              className="w-80 flex flex-col items-center border border-gray-300/60 px-4 py-8 rounded-lg bg-[#101426] relative hover:scale-105 transition duration-500 cursor-pointer "
+            >
+              <div className="absolute top-0 left-0 w-[100%] h-[100%] bg-radial-[at_30%_55%] from-cyan-500/30 via-blue-400/14 to-[#101426]/20 to-90%"></div>
+              <div className="relative mb-2">
                 <img
-                  class="h-15 w-15 rounded-full border-2 border-orange-500"
+                  className="h-15 w-15 rounded-full border-2 border-orange-500"
                   src={imageUrl}
                   alt={imageAlt}
                 />
                 <svg
-                  class="absolute top-0 -right-2"
+                  className="absolute top-0 -right-2"
                   width="22"
                   height="22"
                   viewBox="0 0 22 22"
@@ -37,32 +42,25 @@ const Testimonials = () => {
                   />
                 </svg>
               </div>
-              <h2 class="text-lg text-teal-500 font-medium mt-1">{username}</h2>
-              <div class="flex items-center justify-center mt-3 gap-1">
-                {Array.from({ length: 5 }, () => (
-                  <Star size={16} strokeWidth={0} fill="yellow" />
+              <h2 className="text-lg text-gray-200/90 font-medium mt-1 z-1">
+                {username}
+              </h2>
+              <div className="flex items-center justify-center mt-3 gap-1 z-1">
+                {Array.from({ length: 5 }, (arr, index) => (
+                  <Star key={index} size={16} strokeWidth={0} fill="yellow" />
+                  // <StarHalf key={index} size={16} strokeWidth={0} fill="yellow"/>
                 ))}
               </div>
-              <p class="text-center text-[16px] mt-3 text-gray-400 ">
+              <p className="text-center text-[16px] mt-3 text-gray-300/90 z-1 ">
                 {message}
               </p>
             </div>
           ),
         )}
       </div>
-      <button
-        type="button"
-        className="flex items-center gap-2.5 border border-gray-500/30 px-6 py-3 text-lg text-gray-800 rounded bg-white hover:text-red-300 hover:bg-red-500/10 hover:border-red-500/30 active:scale-95 transition delay-150 duration-300 ease-in-out cursor-pointer m-14"
-      >
-        <Rocket size={20} color="#F7BD02" />
-        Join Cohorts Live Classes
-        <div className="flex items-center space-x-2 pt-1">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
-          </span>
-        </div>
-      </button>
+      <div className="mt-8">
+        <LiveCohortsButton />
+      </div>
     </div>
   );
 };
