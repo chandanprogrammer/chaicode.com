@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router";
-import { AlignJustify, X } from "lucide-react";
+import {
+  AlignJustify,
+  X,
+  Code,
+  BookOpenCheck,
+  Star,
+  PanelBottomClose 
+} from "lucide-react";
 import LoginButton from "./button/LoginButton";
 
 const Navbar = () => {
@@ -13,14 +20,26 @@ const Navbar = () => {
       href: "https://courses.chaicode.com/learn/batch/about?bundleId=214297",
       ariaLabel: "cohorts",
       showLiveBlink: true,
+      icon: <Code size={16} color="white" strokeWidth={2} />,
     },
     {
       label: "Udemy",
       href: "https://docs.chaicode.com",
       ariaLabel: "udemy course",
+      icon: <BookOpenCheck size={16} color="white" strokeWidth={2} />,
     },
-    { label: "Docs", href: "https://docs.chaicode.com", ariaLabel: "docs" },
-    { label: "Reviews", href: "/", ariaLabel: "reviews" },
+    {
+      label: "Docs",
+      href: "https://docs.chaicode.com",
+      ariaLabel: "docs",
+      icon: <PanelBottomClose  size={16} color="white" strokeWidth={2} />,
+    },
+    {
+      label: "Reviews",
+      href: "/",
+      ariaLabel: "reviews",
+      icon: <Star size={16} color="white" strokeWidth={2} />,
+    },
   ];
 
   return (
@@ -41,15 +60,18 @@ const Navbar = () => {
 
         {/* ---------- Desktop Menu ---------- */}
         <ul className="text-white lg:flex hidden items-center gap-10">
-          {navLinks.map(({ label, href, ariaLabel, showLiveBlink }) => (
-            <li key={label} className="flex items-center justify-center gap-2 ">
+          {navLinks.map(({ label, href, ariaLabel, showLiveBlink, icon }) => (
+            <li
+              key={label}
+              className="flex items-center justify-center gap-2 hover:scale-108 transition duration-500"
+            >
               <Link
                 to={href}
                 target="_blank"
                 aria-label={ariaLabel}
-                className="text-lg hover:text-white/70 transition"
+                className="text-lg hover:text-white/70 transition flex items-center gap-2"
               >
-                {label}
+                {icon} {label}
               </Link>
               {showLiveBlink && (
                 <div className="pt-1">
@@ -107,15 +129,15 @@ const Navbar = () => {
               />
             </div>
             <ul className="flex flex-col space-y-7 text-white">
-              {navLinks.map(({ label, href, ariaLabel, showLiveBlink }) => (
-                <li key={label} className="flex items-center gap-2 ">
+              {navLinks.map(({ label, href, ariaLabel, showLiveBlink,icon }) => (
+                <li key={label} className="flex items-center gap-2 hover:scale-108 transition duration-500">
                   <Link
                     to={href}
                     target="_blank"
                     aria-label={ariaLabel}
-                    className="text-lg pl-8"
+                    className="text-lg pl-8 flex items-center gap-2"
                   >
-                    {label}
+                   {icon} {label}
                   </Link>
                   {showLiveBlink && (
                     <div className="pt-1">

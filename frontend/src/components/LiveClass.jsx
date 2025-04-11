@@ -3,6 +3,7 @@ import { coursesData } from "../assets/data/courses-data";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import HeadingText from "./design/HeadingText";
 import { Link } from "react-router";
+import LiveCohortsButton from "./button/LiveCohortsButton";
 
 const LiveClass = () => {
   const scrollRef = useRef(null);
@@ -29,7 +30,7 @@ const LiveClass = () => {
         });
       }
       setActiveIndex(nextIndex);
-    }, 4000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, [activeIndex]);
@@ -112,6 +113,7 @@ const LiveClass = () => {
           ))}
         </div>
       </div>
+      <LiveCohortsButton />
     </div>
   );
 };

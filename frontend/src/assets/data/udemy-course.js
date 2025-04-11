@@ -1,0 +1,67 @@
+export const coursesCrousel = [
+  {
+    courseTitle: "Complete web development course",
+    description:
+      "Only web development course that you will need. Covers HTML, CSS, Tailwind, Node, React, MongoDB, Prisma, Development etc",
+    ratting: "4.7",
+    rattingStatus: "Top Rated",
+    imageUrl: "./public/images/udemy-course.png",
+    imageAlt: "Complete web development course",
+    totalPrice: "3099",
+    discountPercentage: "87",
+    leftOfferDate: "8-12-2025 11:10:00",
+    buyLink: "https://www.udemy.com/course/web-dev-master",
+  },
+  {
+    courseTitle: "Web development Cohort - Live 1.0",
+    description:
+      "Only web development course that you will need. Covers HTML, CSS, Tailwind, Node, React, MongoDB, Prisma, Development etc",
+    ratting: "4.7",
+    rattingStatus: "Top Rated",
+    imageUrl: "./public/images/web-dev-cohort.png",
+    imageAlt: "Web development Cohort",
+    totalPrice: "3099",
+    discountPercentage: "87",
+    leftOfferDate: "8-12-2025 11:10:00",
+    buyLink: "https://courses.chaicode.com/learn/batch/about?bundleId=214297",
+  },
+  {
+    courseTitle: "Full Stack Data Science 1.0",
+    description:
+      "From Python basics to project deployment",
+    ratting: "4.7",
+    rattingStatus: "Top Rated",
+    imageUrl: "./public/images/udemy-course.png",
+    imageAlt: "Full Stack Data Science",
+    totalPrice: "6999",
+    discountPercentage: "22",
+    leftOfferDate: "8-12-2025 11:10:00",
+    buyLink: "https://courses.chaicode.com/learn/batch/about?bundleId=227817",
+  },
+  {
+    courseTitle: "GenAI with Python | Concept to",
+    description:
+      "Development side of AI application",
+    ratting: "4.7",
+    rattingStatus: "Top Rated",
+    imageUrl: "./public/images/udemy-course.png",
+    imageAlt: "GenAI with Python",
+    totalPrice: "7999",
+    discountPercentage: "38",
+    leftOfferDate: "8-12-2025 11:10:00",
+    buyLink: "https://courses.chaicode.com/learn/batch/about?bundleId=227321",
+  },
+  {
+    courseTitle: "DevOps for developers 1.0",
+    description:
+      "Perfect guide to get started with DevOps",
+    ratting: "4.7",
+    rattingStatus: "Top Rated",
+    imageUrl: "./public/images/udemy-course.png",
+    imageAlt: "GenAI with Python",
+    totalPrice: "7999",
+    discountPercentage: "38",
+    leftOfferDate: "8-12-2025 11:10:00",
+    buyLink: "https://courses.chaicode.com/learn/batch/about?bundleId=227963",
+  },
+];

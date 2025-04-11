@@ -1,7 +1,7 @@
 export const coursesData = [
   {
     imageUrl:
-      "./public/images/image.png",
+      "./public/images/web-dev-cohort.png",
     imageAlt: "Web dev",
     title: "Web Dev Cohort - Live 1.0",
     description:
@@ -11,7 +11,7 @@ export const coursesData = [
   },
   {
     imageUrl:
-      "./public/images/image.png",
+      "./public/images/web-dev-cohort.png",
     imageAlt: "Web dev",
     title: "Web Dev Cohort - Live 2.0",
     description:
@@ -21,7 +21,7 @@ export const coursesData = [
   },
   {
     imageUrl:
-      "./public/images/image.png",
+      "./public/images/web-dev-cohort.png",
     imageAlt: "Web dev",
     title: "Web Dev Cohort - Live 2.0",
     description:
@@ -31,7 +31,7 @@ export const coursesData = [
   },
   {
     imageUrl:
-      "./public/images/image.png",
+      "./public/images/web-dev-cohort.png",
     imageAlt: "Web dev",
     title: "Web Dev Cohort - Live 2.0",
     description:
@@ -41,7 +41,7 @@ export const coursesData = [
   },
   {
     imageUrl:
-      "./public/images/image.png",
+      "./public/images/web-dev-cohort.png",
     imageAlt: "Web dev",
     title: "Web Dev Cohort - Live 2.0",
     description:
@@ -51,7 +51,7 @@ export const coursesData = [
   },
   {
     imageUrl:
-      "./public/images/image.png",
+      "./public/images/web-dev-cohort.png",
     imageAlt: "Web dev",
     title: "Web Dev Cohort - Live 2.0",
     description:
@@ -61,7 +61,7 @@ export const coursesData = [
   },
   {
     imageUrl:
-      "./public/images/image.png",
+      "./public/images/web-dev-cohort.png",
     imageAlt: "Web dev",
     title: "Web Dev Cohort - Live 3.0",
     description:
@@ -71,7 +71,7 @@ export const coursesData = [
   },
   {
     imageUrl:
-      "./public/images/image.png",
+      "./public/images/web-dev-cohort.png",
     imageAlt: "Web dev",
     title: "Web Dev Cohort - Live 4.0",
     description:

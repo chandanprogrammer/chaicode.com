@@ -10,6 +10,7 @@ import KeyBenefits from "../components/KeyBenefits";
 import WhyChaiCode from "../components/WhyChaiCode";
 import Topics from "../components/Topics";
 import LinePattern from "../components/design/LinePattern";
+import ApiSection from "../components/ApiSection";
 
 const Home = () => {
   return (
@@ -18,14 +19,15 @@ const Home = () => {
       <Navbar />
       <HeroSection />
       <TweetDisplay />
-      <LogoCard />
+      {/* <LogoCard /> */}
       <LiveClass />
       <Testimonials />
       <CourseSlider />
       <KeyBenefits />
       <WhyChaiCode />
       <Topics />
-      <div className="mb-[800px]">
+      <ApiSection />
+      <div className="mb-[400px]">
 
       </div>
     </div>

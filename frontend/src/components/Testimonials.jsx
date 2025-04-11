@@ -6,7 +6,7 @@ import LiveCohortsButton from "./button/LiveCohortsButton";
 
 const Testimonials = () => {
   return (
-    <div className="px-6 md:px-16 lg:px-16 xl:px-20 2xl:px-24 flex items-center justify-center flex-col mt-8 relative">
+    <div className="px-6 md:px-16 lg:px-16 xl:px-20 2xl:px-24 flex items-center justify-center flex-col relative">
       {/* <div className="absolute w-full h-[800px] rotate-80 top-0 left-[-100px] bg-radial-[at_30%_55%] from-via-blue-400/14 to-[#101426] to-90% z-[-1]"></div> */}
       <HeadingText
         heading="Our Students feedback"
@@ -18,9 +18,9 @@ const Testimonials = () => {
           ({ imageUrl, imageAlt, username, ratting, message }, index) => (
             <div
               key={index}
-              className="w-80 flex flex-col items-center border border-gray-300/60 px-4 py-8 rounded-lg bg-[#101426] relative hover:scale-105 transition duration-500 cursor-pointer "
+              className="w-80 flex flex-col items-center border border-gray-300/60 px-4 py-8 rounded-lg bg-[#101426] relative hover:scale-105 transition duration-500 cursor-pointer hover:bg-radial-[at_20%_65%] hover:from-orange-500/40 hove:via-sky-400/14 hover:to-[#101426]/20 hover:to-90% "
             >
-              <div className="absolute top-0 left-0 w-[100%] h-[100%] bg-radial-[at_30%_55%] from-cyan-500/30 via-blue-400/14 to-[#101426]/20 to-90%"></div>
+              <div className="absolute top-0 left-0 w-[100%] h-[100%] bg-radial-[at_30%_55%] from-cyan-500/30 via-blue-400/14 to-[#101426]/20 to-90% "></div>
               <div className="relative mb-2">
                 <img
                   className="h-15 w-15 rounded-full border-2 border-orange-500"
