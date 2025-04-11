@@ -46,7 +46,7 @@ const WhyChaiCode = () => {
         </div>
         <div className="flex items-center justify-between">
           <div className="h-full bg-[#101426] p-4 rounded-2xl shadow-lg border hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out text-center cursor-pointer flex flex-col items-center justify-center">
-            <img src="./public/images/hitesh.png" alt="" />
+            <img src="./images/hitesh.png" alt="" />
             <h2 className="text-3xl font-semibold text-gray-100/90 my-4">
               Hitesh Choudhary
             </h2>

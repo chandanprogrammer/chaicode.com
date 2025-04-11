@@ -144,7 +144,8 @@ const CourseSlider = () => {
                         <span className="text-2xl font-extrabold">
                           ₹
                           {Math.floor(
-                            totalPrice - totalPrice * (discountPercentage / 100),
+                            totalPrice -
+                              totalPrice * (discountPercentage / 100),
                           )}
                         </span>{" "}
                         <span className="text-xl ml-2 text-gray-500">
@@ -165,10 +166,7 @@ const CourseSlider = () => {
                         45 minutes left at this price
                       </div>
                       <div className="flex gap-4 flex-col mt-4">
-                        <Link
-                          to={buyLink}
-                          target="_blank"
-                        >
+                        <Link to={buyLink} target="_blank">
                           <button
                             type="button"
                             className="px-6 py-2 transition bg-purple-700 hover:bg-purple-900 rounded text-white shadow-lg shadow-blue-500/30 text-[18px] font-medium w-[100%] cursor-pointer flex gap-3 items-center justify-center"

@@ -1,82 +1,111 @@
 export const coursesData = [
   {
-    imageUrl:
-      "./images/web-dev-cohort.png",
-    imageAlt: "Web dev",
+    imageUrl: "./images/web-dev-cohort.png",
+    imageAlt: "Web dev Cohort",
     title: "Web Dev Cohort - Live 1.0",
     description:
-      "Learn to build software for web with best and latest tech stack",
+      "Learn to build software for web with best and latest tech stack.",
+    totalPrice: "8999",
+    discountPercentage: "22",
     buttonText: " By Now",
     buttonUrl: "https://courses.chaicode.com/learn/batch/about?bundleId=214297",
   },
   {
-    imageUrl:
-      "./images/web-dev-cohort.png",
-    imageAlt: "Web dev",
-    title: "Web Dev Cohort - Live 2.0",
+    imageUrl: "./images/devops-cohort.png",
+    imageAlt: "DevOps for Developers",
+    title: "DevOps for Developers 1.0",
     description:
-      "Learn to build software for web with best and latest tech stack",
+      "LInux, DevOps, Docker, Containers, SonarQube, Prometheus &amp; Grafana, Load balancing, zero down time deployments.",
+    totalPrice: "7999",
+    discountPercentage: "38",
+    buttonText: " By Now",
+    buttonUrl: "https://courses.chaicode.com/learn/batch/about?bundleId=227963",
+  },
+  {
+    imageUrl: "./images/gen-ai-cohort.png",
+    imageAlt: "GenAI with python",
+    title: "GenAI with python 1.0",
+    description:
+      "Learn GenAI in Hindi with concepts, end to end projects with deployment and best learning community.",
+    totalPrice: "7999",
+    discountPercentage: "38",
+    buttonText: " By Now",
+    buttonUrl: "https://courses.chaicode.com/learn/batch/about?bundleId=227321",
+  },
+  {
+    imageUrl: "./images/data-science-cohort.png",
+    imageAlt: "Full Stack Data science",
+    title: "Full Stack Data science 1.0",
+    description:
+      "Python, Machine Learning, deep learning, NLP, AI, Langchain and more. A complete Data science journey.",
+    totalPrice: "8999",
+    discountPercentage: "22",
+    buttonText: " By Now",
+    buttonUrl: "https://courses.chaicode.com/learn/batch/about?bundleId=227817",
+  },
+  {
+    imageUrl: "./images/coding-heroes.png",
+    imageAlt: "Coding Hero 2025",
+    title: "Coding Hero 2025",
+    description: "Our Community focused program for students",
+    totalPrice: "499",
+    discountPercentage: "60",
+    buttonText: " By Now",
+    buttonUrl: "https://courses.chaicode.com/learn/batch/Coding-Hero-2025",
+  },
+  // repeat ------------------------------------------------------------------------------
+  {
+    imageUrl: "./images/web-dev-cohort.png",
+    imageAlt: "Web dev Cohort",
+    title: "Web Dev Cohort - Live 1.0",
+    description:
+      "Learn to build software for web with best and latest tech stack.",
+    totalPrice: "8999",
+    discountPercentage: "22",
     buttonText: " By Now",
     buttonUrl: "https://courses.chaicode.com/learn/batch/about?bundleId=214297",
   },
   {
-    imageUrl:
-      "./images/web-dev-cohort.png",
-    imageAlt: "Web dev",
-    title: "Web Dev Cohort - Live 2.0",
+    imageUrl: "./images/devops-cohort.png",
+    imageAlt: "DevOps for Developers",
+    title: "DevOps for Developers 1.0",
     description:
-      "Learn to build software for web with best and latest tech stack",
+      "LInux, DevOps, Docker, Containers, SonarQube, Prometheus &amp; Grafana, Load balancing, zero down time deployments.",
+    totalPrice: "7999",
+    discountPercentage: "38",
     buttonText: " By Now",
-    buttonUrl: "https://courses.chaicode.com/learn/batch/about?bundleId=214297",
+    buttonUrl: "https://courses.chaicode.com/learn/batch/about?bundleId=227963",
   },
   {
-    imageUrl:
-      "./images/web-dev-cohort.png",
-    imageAlt: "Web dev",
-    title: "Web Dev Cohort - Live 2.0",
+    imageUrl: "./images/gen-ai-cohort.png",
+    imageAlt: "GenAI with python",
+    title: "GenAI with python 1.0",
     description:
-      "Learn to build software for web with best and latest tech stack",
+      "Learn GenAI in Hindi with concepts, end to end projects with deployment and best learning community.",
+    totalPrice: "7999",
+    discountPercentage: "38",
     buttonText: " By Now",
-    buttonUrl: "https://courses.chaicode.com/learn/batch/about?bundleId=214297",
+    buttonUrl: "https://courses.chaicode.com/learn/batch/about?bundleId=227321",
   },
   {
-    imageUrl:
-      "./images/web-dev-cohort.png",
-    imageAlt: "Web dev",
-    title: "Web Dev Cohort - Live 2.0",
+    imageUrl: "./images/data-science-cohort.png",
+    imageAlt: "Full Stack Data science",
+    title: "Full Stack Data science 1.0",
     description:
-      "Learn to build software for web with best and latest tech stack",
+      "Python, Machine Learning, deep learning, NLP, AI, Langchain and more. A complete Data science journey.",
+    totalPrice: "8999",
+    discountPercentage: "22",
     buttonText: " By Now",
-    buttonUrl: "https://courses.chaicode.com/learn/batch/about?bundleId=214297",
+    buttonUrl: "https://courses.chaicode.com/learn/batch/about?bundleId=227817",
   },
   {
-    imageUrl:
-      "./images/web-dev-cohort.png",
-    imageAlt: "Web dev",
-    title: "Web Dev Cohort - Live 2.0",
-    description:
-      "Learn to build software for web with best and latest tech stack",
+    imageUrl: "./images/coding-heroes.png",
+    imageAlt: "Coding Hero 2025",
+    title: "Coding Hero 2025",
+    description: "Our Community focused program for students",
+    totalPrice: "499",
+    discountPercentage: "60",
     buttonText: " By Now",
-    buttonUrl: "https://courses.chaicode.com/learn/batch/about?bundleId=214297",
-  },
-  {
-    imageUrl:
-      "./images/web-dev-cohort.png",
-    imageAlt: "Web dev",
-    title: "Web Dev Cohort - Live 3.0",
-    description:
-      "Learn to build software for web with best and latest tech stack",
-    buttonText: " By Now",
-    buttonUrl: "https://courses.chaicode.com/learn/batch/about?bundleId=214297",
-  },
-  {
-    imageUrl:
-      "./images/web-dev-cohort.png",
-    imageAlt: "Web dev",
-    title: "Web Dev Cohort - Live 4.0",
-    description:
-      "Learn to build software for web with best and latest tech stack",
-    buttonText: " By Now",
-    buttonUrl: "https://courses.chaicode.com/learn/batch/about?bundleId=214297",
+    buttonUrl: "https://courses.chaicode.com/learn/batch/Coding-Hero-2025",
   },
 ];

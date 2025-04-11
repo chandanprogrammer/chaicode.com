@@ -72,7 +72,15 @@ const LiveClass = () => {
         >
           {coursesData.map(
             (
-              { imageUrl, title, description, buttonText, buttonUrl },
+              {
+                imageUrl,
+                title,
+                description,
+                totalPrice,
+                discountPercentage,
+                buttonText,
+                buttonUrl,
+              },
               index,
             ) => (
               <div
@@ -80,18 +88,34 @@ const LiveClass = () => {
                 className="bg-[#101426] rounded-lg shadow-sm text-sm min-w-[20rem] max-w-[20rem] border border-gray-600 flex-shrink-0 tracking-wider"
               >
                 <img
-                  className="rounded-t-md h-50 w-full object-cover border-b border-b-gray-600"
+                  className="rounded-t-md h-[200px] w-full object-cover border-b border-b-gray-600"
                   src={imageUrl}
                   alt={title}
                 />
-                <p className="text-gray-100/80 text-xl font-semibold ml-4 mt-5">
+                <p className="max-h-[60px] text-gray-100/80 text-xl font-semibold ml-4 mt-5 line-clamp-2">
                   {title}
                 </p>
-                <p className="text-orange-300/70 ml-4 mt-2">{description}</p>
+                <p className="text-gray-400/70 ml-4 mt-2 line-clamp-2">
+                  {description}
+                </p>
+                <div className="mt-3 ml-4">
+                  <span className="text-xl font-extrabold text-gray-100/80">
+                    ₹
+                    {Math.floor(
+                      totalPrice - totalPrice * (discountPercentage / 100),
+                    )}
+                  </span>{" "}
+                  <span className="text-lg ml-2 text-gray-300/50">
+                    <del>₹{totalPrice}</del>
+                  </span>{" "}
+                  <span className="ml-2 text-lg text-green-400/80">
+                    {discountPercentage}% off
+                  </span>
+                </div>
                 <Link to={buttonUrl} target="_blank">
                   <button
                     type="button"
-                    className="w-[50%] mb-6 ml-4 mt-5 text-[16px] font-bold bg-sky-700 text-white inline hover:opacity-90 active:scale-95 transition-all px-8 py-2 rounded cursor-pointer tracking-wider"
+                    className="w-[50%] mb-6 ml-4 mt-5 text-[16px] font-bold bg-orange-500/80 text-white inline hover:opacity-50 active:scale-95 transition-all px-8 py-2 rounded cursor-pointer tracking-wider"
                   >
                     {buttonText}
                   </button>
