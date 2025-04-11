@@ -6,6 +6,7 @@
 .button-border-animate {
   padding: 0.8em 3em;
   background: #101828;
+  color: #ffffffb7;
   text-align: center;
   border-radius: 10px;
   border: 1px solid rgba(249, 249, 249, 0.17);
@@ -14,7 +15,7 @@
 }
 .button-border-animate:hover{
 background-color: #173247;
-color: #988e35;
+color: #ffffff;
 transition: all 0.3s linear;
 }
 .button-border-animate::after,

@@ -95,8 +95,8 @@ const KeyBenefits = () => {
           </div>
         ))}
       </div>
-      <div className="flex flex-col lg:flex-row gap-5 lg:gap-2 mt-8 md:mt-0 md:p-6 rounded">
-        <div className="lg:w-[50%] bg-gray-700 h-[280px] rounded-lg p-6 grid grid-cols-7 gap-2">
+      <div className="flex flex-col lg:flex-row gap-5 lg:gap-2 mt-8 md:mt-0 md:p-6 rounded ">
+        <div className="lg:w-[50%] bg-gray-900/80 h-[280px] rounded-lg p-6 grid grid-cols-7 gap-2 border-1 border-gray-100/20">
           {imageNetworkUrl.map((link, index) => (
             <div
               key={index}
@@ -108,7 +108,7 @@ const KeyBenefits = () => {
             </div>
           ))}
         </div>
-        <div className="lg:w-[50%] flex  flex-col items-center justify-center text-center">
+        <div className="lg:w-[50%] flex  flex-col items-center justify-center text-center ">
           <h2 className="text-[25px] lg:text-[30px] font-bold tracking-wide text-orange-400/60 mb-4">
             Alumni Network and Job Listings
           </h2>

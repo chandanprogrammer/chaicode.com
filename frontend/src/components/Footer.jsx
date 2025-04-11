@@ -5,7 +5,7 @@ import { Link } from "react-router";
 const Footer = () => {
   return (
     <footer class="px-6 md:px-16 lg:px-16 xl:px-20 2xl:px-55 w-full mt-12 border-t border-gray-500/60 ">
-      <div class="flex flex-col md:flex-row items-start justify-center gap-10 py-10 border-b border-gray-500/40">
+      <div class="flex flex-col md:flex-row items-start justify-center py-10 border-b border-gray-500/40">
         <div class="max-w-100 lg:mr-40">
           <Link to="/">
             <img
@@ -55,7 +55,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div class="w-1/3 flex flex-wrap md:flex-nowrap justify-between">
+        <div class="w-1/3 flex flex-nowrap justify-between ">
           <div>
             <h2 class="font-semibold text-gray-200/80 mb-5">RESOURCES</h2>
             <ul class="text-[16px] text-orange-300/70 space-y-3 list-none">
