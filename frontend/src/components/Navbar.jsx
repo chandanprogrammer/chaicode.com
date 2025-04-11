@@ -50,7 +50,7 @@ const Navbar = () => {
           <img
             aria-label="chaicode logo"
             className="h-7 md:h-8 cursor-pointer"
-            src="./public/images/chaicode-white.svg"
+            src="../../public/images/chaicode-white.svg"
             alt="ChaiCode Logo"
             onClick={() => {
               navigate("/");
@@ -114,7 +114,7 @@ const Navbar = () => {
               <img
                 aria-label="chaicode logo"
                 className="h-7 cursor-pointer"
-                src="./public/images/chaicode-white.svg"
+                src="../../public/images/chaicode-white.svg"
                 alt="ChaiCode Logo"
                 onClick={() => {
                   navigate("/");
