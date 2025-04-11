@@ -1,6 +1,6 @@
 import React from "react";
 import { Star, StarHalf } from "lucide-react";
-import { testiomonialData } from "../assets/data/testiomonial-data";
+import { testimonialData } from "../assets/data/testiomonial-data";
 import HeadingText from "./design/HeadingText";
 import LiveCohortsButton from "./button/LiveCohortsButton";
 
@@ -14,7 +14,7 @@ const Testimonials = () => {
         enhancing your skills"
       />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
-        {testiomonialData.map(
+        {testimonialData.map(
           ({ imageUrl, imageAlt, username, ratting, message }, index) => (
             <div
               key={index}

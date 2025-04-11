@@ -11,27 +11,34 @@ import HeadingText from "./design/HeadingText";
 
 const KeyBenefits = () => {
   const imageNetworkUrl = [
-    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    "./images/aditya.png",
     "",
-    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    "./images/ajay.png",
     "",
-    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    "./images/jay.png",
     "",
-    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    "./images/chandan.png",
     "",
-    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    "./images/ashiwini.png",
     "",
-    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    "./images/suraj.png",
     "",
-    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    "./images/ram.png",
     "",
-    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    "./images/saurav.png",
     "",
-    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    "./images/sahil.png",
     "",
-    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    "./images/aditya2.png",
     "",
-    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    "./images/jitu.png",
+    "",
+    "./images/ram.png",
+    "",
+    "./images/jitu.png",
+    "",
+    "./images/aditya.png",
+    "",
   ];
   const features = [
     {
@@ -91,7 +98,10 @@ const KeyBenefits = () => {
       <div className="flex flex-col lg:flex-row gap-5 lg:gap-2 mt-8 md:mt-0 md:p-6 rounded">
         <div className="lg:w-[50%] bg-gray-700 h-[280px] rounded-lg p-6 grid grid-cols-7 gap-2">
           {imageNetworkUrl.map((link, index) => (
-            <div key={index} className="flex items-center justify-center">
+            <div
+              key={index}
+              className="flex items-center justify-center"
+            >
               <div className="w-12 h-12 rounded-full">
                 <img src={link} alt="" className=" w-[100%] rounded-full " />
               </div>
@@ -100,7 +110,7 @@ const KeyBenefits = () => {
         </div>
         <div className="lg:w-[50%] flex  flex-col items-center justify-center text-center">
           <h2 className="text-[25px] lg:text-[30px] font-bold tracking-wide text-orange-400/60 mb-4">
-            Alumni Network and job listings
+            Alumni Network and Job Listings
           </h2>
           <p className="w-[90%] text-gray-300/60 tracking-wide">
             The alumni Network that you always wished for in your college. We

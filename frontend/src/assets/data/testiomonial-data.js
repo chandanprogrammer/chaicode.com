@@ -1,56 +1,56 @@
-export const testiomonialData = [
+export const testimonialData = [
   {
     imageUrl:
-      "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
-    imageAlt: "",
-    username: "Chandan Kumar",
-    ratting: 4,
+      "./images/saurav.png",
+    imageAlt: "Saurav Jha",
+    username: "Saurav Jha",
+    ratting: 5,
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enimdistinctio saepe sed deleniti quam quae, adipisci tempora verocorrupti, beatae reprehenderit",
+      "Amazing service! The process was smooth and the team was very responsive. Highly recommended!",
   },
   {
     imageUrl:
-      "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
-    imageAlt: "",
-    username: "Chandan Kumar",
+      "./images/aditya.png",
+    imageAlt: "Aditya Sharma",
+    username: "Aditya Sharma",
     ratting: 4,
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enimdistinctio saepe sed deleniti quam quae, adipisci tempora verocorrupti, beatae reprehenderit",
+      "Great experience overall. A few hiccups along the way, but the support team handled them well.",
   },
   {
     imageUrl:
-      "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
-    imageAlt: "",
-    username: "Chandan Kumar",
-    ratting: 4,
+      "./images/ram.png",
+    imageAlt: "	Ram Bhardwaj",
+    username: "	Ram Bhardwaj",
+    ratting: 5,
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enimdistinctio saepe sed deleniti quam quae, adipisci tempora verocorrupti, beatae reprehenderit ",
+      "I’m extremely satisfied with the services provided. Fast, reliable, and easy to work with.",
   },
   {
     imageUrl:
-      "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
-    imageAlt: "",
-    username: "Chandan Kumar",
-    ratting: 4,
+      "./images/ajay.png",
+    imageAlt: "Ajay Panigrahi",
+    username: "Ajay Panigrahi",
+    ratting: 3,
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enimdistinctio saepe sed deleniti quam quae, adipisci tempora verocorrupti, beatae reprehenderit",
+      "The service was decent, though there is definitely room for improvement in response time.",
   },
   {
     imageUrl:
-      "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
-    imageAlt: "",
-    username: "Chandan Kumar",
+      "./images/jay.png",
+    imageAlt: "Jay Kadlag",
+    username: "Jay Kadlag",
     ratting: 4,
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enimdistinctio saepe sed deleniti quam quae, adipisci tempora verocorrupti, beatae reprehenderit",
+      "I liked the overall user interface and the support I received was very helpful.",
   },
   {
     imageUrl:
-      "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
-    imageAlt: "",
-    username: "Chandan Kumar",
-    ratting: 4,
+      "./images/suraj.png",
+    imageAlt: "Sujal Patel",
+    username: "Sujal Patel",
+    ratting: 5,
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enimdistinctio saepe sed deleniti quam quae, adipisci tempora verocorrupti, beatae reprehenderit",
+      "Fantastic platform! Everything was quick, clear, and convenient. I’ll definitely be back.",
   },
 ];
