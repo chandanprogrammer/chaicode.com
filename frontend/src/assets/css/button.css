@@ -1,0 +1,52 @@
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.button-border-animate {
+  padding: 0.8em 3em;
+  background: #101828;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid rgba(249, 249, 249, 0.17);
+  position: relative;
+  cursor: pointer;
+}
+.button-border-animate:hover{
+background-color: #173247;
+color: #988e35;
+transition: all 0.3s linear;
+}
+.button-border-animate::after,
+.button-border-animate::before {
+  content: "";
+  position: absolute;
+  height: 108%;
+  width: 102%;
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent 70%,
+    #006affaa,
+    #ff00959e,
+    #00ff995a
+  );
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  /* padding: 1px; */
+  border-radius: 10px;
+  animation: 4s spin linear infinite;
+}
+.button-border-animate::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}

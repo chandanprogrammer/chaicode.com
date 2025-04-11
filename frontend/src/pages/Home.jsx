@@ -11,6 +11,7 @@ import WhyChaiCode from "../components/WhyChaiCode";
 import Topics from "../components/Topics";
 import LinePattern from "../components/design/LinePattern";
 import ApiSection from "../components/ApiSection";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -27,9 +28,7 @@ const Home = () => {
       <WhyChaiCode />
       <Topics />
       <ApiSection />
-      <div className="mb-[400px]">
-
-      </div>
+      <Footer />
     </div>
   );
 };
