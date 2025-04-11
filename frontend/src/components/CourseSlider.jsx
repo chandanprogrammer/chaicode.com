@@ -17,6 +17,10 @@ const CourseSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = coursesCrousel.length;
 
+  // Touch states
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchEndX, setTouchEndX] = useState(0);
+
   const goToSlide = (index) => {
     const slider = sliderRef.current;
     if (slider && slider.children.length > 0) {
@@ -54,6 +58,27 @@ const CourseSlider = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, [currentSlide]);
 
+  // Touch event handlers
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEndX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX - touchEndX > 50) {
+      nextSlide(); // Swipe left
+    } else if (touchEndX - touchStartX > 50) {
+      prevSlide(); // Swipe right
+    }
+
+    // Reset
+    setTouchStartX(0);
+    setTouchEndX(0);
+  };
+
   return (
     <div className="px-6 md:px-16 lg:px-16 xl:px-20 2xl:px-55 flex items-center justify-center flex-col ">
       <HeadingText
@@ -74,6 +99,9 @@ const CourseSlider = () => {
           <div
             className="flex transition-transform duration-500 ease-in-out bg-amber-600"
             ref={sliderRef}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
             {coursesCrousel.map(
               (
@@ -174,12 +202,6 @@ const CourseSlider = () => {
                             Buy Now
                           </button>
                         </Link>
-                        {/* <button
-                        type="button"
-                        className="bg-white text-gray-500 active:scale-95 transition text-sm px-6 py-2 rounded border border-gray-500 w-[100%] cursor-pointer flex gap-3 items-center justify-center mb-2"
-                      >
-                        Buy now
-                      </button> */}
                       </div>
                     </div>
                   </div>

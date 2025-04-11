@@ -1,226 +1,145 @@
 import React, { useRef, useEffect, useState } from "react";
-import { Link } from "react-router";
-import {
-  ArrowLeft,
-  ArrowRight,
-  Star,
-  CircleCheck,
-  AlarmClockCheck,
-} from "lucide-react";
+import { coursesData } from "../assets/data/courses-data";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import HeadingText from "./design/HeadingText";
-import { coursesCrousel } from "../assets/data/udemy-course";
+import { Link } from "react-router";
+import LiveCohortsButton from "./button/LiveCohortsButton";
 
-const CourseSlider = () => {
-  const sliderRef = useRef(null);
-  const nextButtonRef = useRef(null);
-  const prevButtonRef = useRef(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = coursesCrousel.length;
+const LiveClass = () => {
+  const scrollRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  // Touch states
-  const [touchStartX, setTouchStartX] = useState(0);
-  const [touchEndX, setTouchEndX] = useState(0);
-
-  const goToSlide = (index) => {
-    const slider = sliderRef.current;
-    if (slider && slider.children.length > 0) {
-      const slideWidth = slider.children[0].clientWidth;
-      slider.style.transform = `translateX(-${index * slideWidth}px)`;
+  const scroll = (direction) => {
+    const { current } = scrollRef;
+    if (current) {
+      const scrollAmount = direction === "left" ? -300 : 300;
+      current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % totalSlides);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
-  };
-
-  useEffect(() => {
-    goToSlide(currentSlide);
-  }, [currentSlide]);
-
+  // Auto-scroll and reset to start
   useEffect(() => {
     const interval = setInterval(() => {
-      nextSlide();
-    }, 5000);
+      const nextIndex = (activeIndex + 1) % coursesData.length;
+      const container = scrollRef.current;
+      if (container) {
+        const cardWidth = container.scrollWidth / coursesData.length;
+        container.scrollTo({
+          left: nextIndex * cardWidth,
+          behavior: "smooth",
+        });
+      }
+      setActiveIndex(nextIndex);
+    }, 2000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [activeIndex]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      goToSlide(currentSlide);
-    };
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, [currentSlide]);
-
-  // Touch event handlers
-  const handleTouchStart = (e) => {
-    setTouchStartX(e.touches[0].clientX);
-  };
-
-  const handleTouchMove = (e) => {
-    setTouchEndX(e.touches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    if (touchStartX - touchEndX > 50) {
-      nextSlide(); // Swipe left
-    } else if (touchEndX - touchStartX > 50) {
-      prevSlide(); // Swipe right
+  const handleScroll = () => {
+    const container = scrollRef.current;
+    if (container) {
+      const scrollLeft = container.scrollLeft;
+      const cardWidth = container.scrollWidth / coursesData.length;
+      const newIndex = Math.round(scrollLeft / cardWidth);
+      setActiveIndex(newIndex);
     }
-
-    // Reset
-    setTouchStartX(0);
-    setTouchEndX(0);
   };
 
   return (
-    <div className="px-6 md:px-16 lg:px-16 xl:px-20 2xl:px-55 flex items-center justify-center flex-col ">
-      <HeadingText
-        heading="Udemy"
-        text="Not only in India, we are global leaders in tech education"
-      />
+    <div className="px-6 md:px-16 lg:px-16 xl:px-20 2xl:px-55 flex items-center justify-center flex-col mt-8">
+      <HeadingText heading="Cohorts" text="Live training classes" />
 
-      <div className="flex items-center justify-center flex-rowmt-8 mt-8 w-[100%]">
-        <div
-          className="md:p-2 p-1 bg-black/30 md:mr-6 mr-2 rounded-full hover:bg-black/50 cursor-pointer hidden md:inline border border-cyan-500"
-          ref={prevButtonRef}
-          onClick={prevSlide}
+      <div className="relative w-full mt-6">
+        {/* Arrows */}
+        <button
+          onClick={() => scroll("left")}
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#101426] text-white p-2 rounded-full z-10 hover:bg-gray-600 cursor-pointer hidden lg:flex border border-cyan-500"
         >
-          <ArrowLeft size={25} />
-        </div>
+          <ArrowLeft />
+        </button>
+        <button
+          onClick={() => scroll("right")}
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#101426] text-white p-2 rounded-full z-10 hover:bg-gray-600 cursor-pointer hidden lg:flex border border-cyan-500"
+        >
+          <ArrowRight />
+        </button>
 
-        <div className="w-full lg:max-w-4xl overflow-hidden relative rounded-lg border border-gray-200/30 ">
-          <div
-            className="flex transition-transform duration-500 ease-in-out bg-amber-600"
-            ref={sliderRef}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
-            {coursesCrousel.map(
-              (
-                {
-                  courseTitle,
-                  description,
-                  ratting,
-                  rattingStatus,
-                  imageUrl,
-                  imageAlt,
-                  totalPrice,
-                  discountPercentage,
-                  buyLink,
-                },
-                index,
-              ) => (
-                <div
-                  key={index}
-                  className="w-full flex-shrink-0 bg-gray-900 flex flex-col lg:flex-row gap-6 lg:gap-4 items-center justify-center px-4 py-10 xl:p-4"
-                >
-                  <div className="text-center md:w-[80%]">
-                    <h2 className="text-3xl mb-5 text-gary-200 font-semibold tracking-wide">
-                      {courseTitle}
-                    </h2>
-                    <p className="text-base text-gray-400">{description}</p>
-                    <div className="text-2xl flex items-center justify-center gap-4">
-                      <div className="flex items-center justify-center mt-3 gap-2">
-                        {Array.from({ length: 5 }, (arr, index) => (
-                          <Star
-                            key={index}
-                            size={18}
-                            strokeWidth={0}
-                            fill="yellow"
-                          />
-                        ))}
-                      </div>
-                      <p className="text-3xl text-gray-300 mt-5 mb-2 border-2 border-gray-800 px-6 py-2">
-                        {ratting} Stars
-                      </p>
-                    </div>
-                    <p className="mt-4 text-green-500 text-xl tracking-wider">
-                      {rattingStatus}
-                    </p>
-                  </div>
-                  <div className="md:w-[80%] lg:w-[50%] bg-amber-50 text-gray-800 rounded-sm">
-                    <div className="w-full lg:h-[50%] rounded-sm">
-                      <img
-                        className="h-auto object-cover rounded-t-sm"
-                        src={imageUrl}
-                        alt={imageAlt}
-                      />
-                    </div>
-                    <div className="p-4">
-                      <div className="flex">
-                        <p className="w-[50%] border-b-blue-400 border-b-2 pb-1 text-center cursor-pointer">
-                          Personal
-                        </p>
-                        <p className="w-[50%] border-b-gray-300 border-b-2 pb-1 text-center cursor-pointer">
-                          Terms
-                        </p>
-                      </div>
-                      <p className="text-purple-500 flex items-center gap-2 text-sm mt-3">
-                        <CircleCheck size={16} className="animate-pulse" />
-                        This Premium course is included in plans
-                      </p>
-
-                      <div className="mt-3">
-                        <span className="text-2xl font-extrabold">
-                          ₹
-                          {Math.floor(
-                            totalPrice -
-                              totalPrice * (discountPercentage / 100),
-                          )}
-                        </span>{" "}
-                        <span className="text-xl ml-2 text-gray-500">
-                          <del>₹{totalPrice}</del>
-                        </span>{" "}
-                        <span className="ml-2 text-lg text-blue-800">
-                          {discountPercentage}% off
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm my-2 text-red-700">
-                        <span className="relative">
-                          <AlarmClockCheck
-                            size={16}
-                            className="animate-ping absolute inset-0 text-red-400 opacity-75"
-                          />
-                          <AlarmClockCheck size={16} className="relative" />
-                        </span>
-                        45 minutes left at this price
-                      </div>
-                      <div className="flex gap-4 flex-col mt-4">
-                        <Link to={buyLink} target="_blank">
-                          <button
-                            type="button"
-                            className="px-6 py-2 transition bg-purple-700 hover:bg-purple-900 rounded text-white shadow-lg shadow-blue-500/30 text-[18px] font-medium w-[100%] cursor-pointer flex gap-3 items-center justify-center"
-                          >
-                            Buy Now
-                          </button>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
+        {/* Carousel Items */}
+        <div
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="flex items-center overflow-x-auto gap-5 lg:ml-[2.5%] pb-4 scroll-smooth hide-scrollbar lg:w-[95%]"
+        >
+          {coursesData.map(
+            (
+              {
+                imageUrl,
+                title,
+                description,
+                totalPrice,
+                discountPercentage,
+                buttonText,
+                buttonUrl,
+              },
+              index,
+            ) => (
+              <div
+                key={index}
+                className="bg-[#101426] rounded-lg shadow-sm text-sm min-w-[20rem] max-w-[20rem] border border-gray-600 flex-shrink-0 tracking-wider"
+              >
+                <img
+                  className="rounded-t-md h-[200px] w-full object-cover border-b border-b-gray-600"
+                  src={imageUrl}
+                  alt={title}
+                />
+                <p className="max-h-[60px] text-gray-100/80 text-xl font-semibold ml-4 mt-5 line-clamp-2">
+                  {title}
+                </p>
+                <p className="text-gray-400/70 ml-4 mt-2 line-clamp-2">
+                  {description}
+                </p>
+                <div className="mt-3 ml-4">
+                  <span className="text-xl font-extrabold text-gray-100/80">
+                    ₹
+                    {Math.floor(
+                      totalPrice - totalPrice * (discountPercentage / 100),
+                    )}
+                  </span>{" "}
+                  <span className="text-lg ml-2 text-gray-300/50">
+                    <del>₹{totalPrice}</del>
+                  </span>{" "}
+                  <span className="ml-2 text-lg text-green-400/80">
+                    {discountPercentage}% off
+                  </span>
                 </div>
-              ),
-            )}
-          </div>
+                <Link to={buttonUrl} target="_blank">
+                  <button
+                    type="button"
+                    className="w-[50%] mb-6 ml-4 mt-5 text-[16px] font-bold bg-orange-500/80 text-white inline hover:opacity-50 active:scale-95 transition-all px-8 py-2 rounded cursor-pointer tracking-wider"
+                  >
+                    {buttonText}
+                  </button>
+                </Link>
+              </div>
+            ),
+          )}
         </div>
 
-        <div
-          className="p-1 md:p-2 bg-black/30 md:ml-6 ml-2 rounded-full hover:bg-black/50 cursor-pointer hidden md:inline border border-cyan-500"
-          ref={nextButtonRef}
-          onClick={nextSlide}
-        >
-          <ArrowRight size={25} />
+        {/* Dots */}
+        <div className="flex justify-center gap-2 mt-4">
+          {coursesData.map((_, index) => (
+            <span
+              key={index}
+              className={`h-2 w-2 rounded-full transition-all ${
+                index === activeIndex ? "bg-orange-500" : "bg-gray-400"
+              }`}
+            />
+          ))}
         </div>
       </div>
+      <LiveCohortsButton />
     </div>
   );
 };
 
-export default CourseSlider;
+export default LiveClass;

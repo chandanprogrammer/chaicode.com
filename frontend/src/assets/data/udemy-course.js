@@ -16,7 +16,7 @@ export const coursesCrousel = [
     courseTitle: "Web development Cohort - Live 1.0",
     description:
       "Only web development course that you will need. Covers HTML, CSS, Tailwind, Node, React, MongoDB, Prisma, Development etc",
-    ratting: "4.7",
+    ratting: "4.3",
     rattingStatus: "Top Rated",
     imageUrl: "./images/web-dev-cohort.png",
     imageAlt: "Web development Cohort",
@@ -29,7 +29,7 @@ export const coursesCrousel = [
     courseTitle: "DevOps for Developers 1.0",
     description:
       "LInux, DevOps, Docker, Containers, SonarQube, Prometheus &amp; Grafana, Load balancing, zero down time deployments.",
-    ratting: "4.7",
+    ratting: "4.9",
     rattingStatus: "Top Rated",
     imageUrl: "./images/devops-cohort.png",
     imageAlt: "DevOps for Developers",
@@ -42,7 +42,7 @@ export const coursesCrousel = [
     courseTitle: "Full Stack Data science 1.0",
     description:
       "Python, Machine Learning, deep learning, NLP, AI, Langchain and more. A complete Data science journey.",
-    ratting: "4.7",
+    ratting: "4.2",
     rattingStatus: "Top Rated",
     imageUrl: "./images/data-science-cohort.png",
     imageAlt: "Full Stack Data science",
@@ -55,7 +55,7 @@ export const coursesCrousel = [
     courseTitle: "Coding Hero 2025",
     description:
       "Our Community focused program for students",
-    ratting: "4.7",
+    ratting: "4.5",
     rattingStatus: "Top Rated",
     imageUrl: "./images/coding-heroes.png",
     imageAlt: "Coding Hero 2025",
