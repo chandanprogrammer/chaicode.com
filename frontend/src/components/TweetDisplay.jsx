@@ -23,7 +23,9 @@ const TweetDisplay = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-x-4 text-[14px]">
         <Tweet id="1906393735203836076" />
         <Tweet id="1910696141286432865" />
-        <Tweet id="1910628439884710331" />
+        {/* <Tweet id="1909941253321486821" /> */}
+        <Tweet id="1910196260746723481" />
+        {/* <Tweet id="1910642740490027413" /> */}
       </div>
       
     </div>

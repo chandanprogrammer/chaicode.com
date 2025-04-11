@@ -6,8 +6,8 @@ const LiveCohortsButton = () => {
   return (
     <div className="my-10">
       <Link
-        to="https://courses.chaicode.com/learn/batch/about?bundleId=214297"
-        target="_blank"
+        to="https://courses.chaicode.com/learn/view-all?show=batch&type=17"
+        target=""
       >
         <button
           type="button"

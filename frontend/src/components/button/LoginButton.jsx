@@ -5,7 +5,7 @@ const LoginButton = ({ text, link, target }) => {
     <div>
       <Link to={link} target={target}>
         <button
-          className="group relative rounded-full p-px text-zinc-300/80 duration-300 hover:text-zinc-100 hover:shadow-glow hover:shadow-[0_0_11px_2px_#22d3ee29] cursor-pointer z-10 tracking-wider"
+          className="group relative rounded-full p-px text-zinc-200/90 duration-300 hover:text-zinc-100 hover:shadow-glow hover:shadow-[0_0_11px_2px_#22d3ee29] cursor-pointer z-10 tracking-wider"
           aria-label={`${text} button`}
         >
           <div className="relative text-lg rounded-full bg-zinc-950 px-8 py-1.5 ring-1 ring-white/10">

@@ -92,7 +92,7 @@ const CourseSlider = () => {
               ) => (
                 <div
                   key={index}
-                  className="w-full flex-shrink-0 bg-gray-900 flex flex-col lg:flex-row gap-6 lg:gap-4 items-center justify-center px-4 py-10 lg:p-4 "
+                  className="w-full flex-shrink-0 bg-gray-900 flex flex-col lg:flex-row gap-6 lg:gap-4 items-center justify-center px-4 py-10 xl:p-4"
                 >
                   <div className="text-center md:w-[80%]">
                     <h2 className="text-3xl mb-5 text-gary-200 font-semibold tracking-wide">
