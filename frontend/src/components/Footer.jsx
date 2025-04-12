@@ -4,8 +4,13 @@ import { Link } from "react-router";
 
 const Footer = () => {
   return (
-    <footer class="px-6 md:px-16 lg:px-16 xl:px-20 2xl:px-55 w-full mt-12 border-t border-gray-500/60 ">
-      <div class="flex flex-col md:flex-row items-start justify-center py-10 border-b border-gray-500/40">
+    <footer class="px-6 md:px-16 lg:px-16 xl:px-20 2xl:px-55 w-full mt-12 border-t border-gray-500/60 relative">
+        <div class="absolute inset-0 bg-[radial-gradient(#ffffff0d_1px,transparent_1px)] [background-size:24px_24px] opacity-100 pointer-events-none bg-amber-800/8"></div>
+
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="text-[17vw] font-bold text-gray-100/2">CHAICODE</div>
+      </div>
+      <div class="flex flex-col md:flex-row gap-4 items-start justify-center py-10 border-b border-gray-500/40">
         <div class="max-w-100 lg:mr-40">
           <Link to="/">
             <img
@@ -55,7 +60,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div class="w-1/3 flex flex-nowrap justify-between ">
+        <div class="mt-8 md:w-1/3 w-full flex flex-nowrap justify-between">
           <div>
             <h2 class="font-semibold text-gray-200/80 mb-5">RESOURCES</h2>
             <ul class="text-[16px] text-orange-300/70 space-y-3 list-none">
@@ -101,14 +106,10 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="hover:text-orange-400/70 transition duration-500 hover:ml-2">
-                <Link to="https://freeapi.app/">
-                  FreeAPI
-                </Link>
+                <Link to="https://freeapi.app/">FreeAPI</Link>
               </li>
               <li className="hover:text-orange-400/70 transition duration-500 hover:ml-2">
-                <Link to="https://masterji.co/login">
-                  Masterji
-                </Link>
+                <Link to="https://masterji.co/login">Masterji</Link>
               </li>
             </ul>
           </div>
