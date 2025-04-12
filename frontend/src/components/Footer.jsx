@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 const Footer = () => {
   return (
-    <footer class="px-6 md:px-16 lg:px-16 xl:px-20 2xl:px-55 w-full mt-12 border-t border-gray-500/60 relative">
+    <footer class="px-6 md:px-16 lg:px-16 xl:px-20 2xl:px-55 w-full overflow-hidden mt-12 border-t border-gray-500/60 relative">
         <div class="absolute inset-0 bg-[radial-gradient(#ffffff0d_1px,transparent_1px)] [background-size:24px_24px] opacity-100 pointer-events-none bg-amber-800/8"></div>
 
       <div class="absolute inset-0 flex items-center justify-center">
